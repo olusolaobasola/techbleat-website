@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+       stage('copy codes ') {
+            steps {
+                echo "copying codes"
+                sh 'sudo cp index.html  /usr/share/nginx/html'
+                sh 'sudo cp devops.jpg /usr/share/nginx/html'
+            }
+        }
+
+        stage('job done') {
+            steps {
+                echo "task complete"     
+            }
+        }
+    }
+}
